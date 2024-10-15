@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marca de agua en documentos PDF</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0f0f0;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="file"],
+        input[type="date"],
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #downloadLink {
+            text-decoration: none;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        #downloadLink:hover {
+            background-color: #218838;
+        }
+        #resetButton {
+            background-color: #dc3545;
+        }
+        #resetButton:hover {
+            background-color: #c82333;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Marca de agua en documentos PDF</h1>
+
+        <input type="file" id="pdfInput" accept="application/pdf">
+        <input type="date" id="watermarkDate" placeholder="Fecha">
+        <label for="documentPurpose">Propósito del documento:</label>
+        <input type="text" id="documentPurpose" placeholder="Por ejemplo: Contrato" maxlength="50"><br><br>     
+        <button id="applyWatermark">Aplicar marca de agua</button>
+        <button id="resetButton">Limpiar formulario</button>
+
+        <a id="downloadLink" download="documento_con_marca_de_agua.pdf" style="display:none;">Descargar PDF</a>
+
+        <footer>
+            <p class="text-center">By Cypher</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/pdf-lib"></script>
+    <script src="app.js"></script>
+</body>
+</html>
